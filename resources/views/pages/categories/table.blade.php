@@ -23,7 +23,7 @@
             <th>Updated at</th>
             <th>Actions</th>
         </tr>
-        @forelse($categories as $category)
+        @forelse($table as $category)
             <tr>
                 <td>{{ $category->id }}</td>
                 <td>{{ $category->title }}</td>
@@ -42,9 +42,7 @@
             </tr>
         @endforelse
     </table>
-    @php
-        require_once 'paginator.php'
-    @endphp
+    @include('pages.paginator')
     <div class="mb-3">
         <a class="btn btn-primary" href="/categories/create">Add new category</a>
     </div>

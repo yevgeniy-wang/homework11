@@ -12,8 +12,10 @@ class CategoryController
     public function list()
     {
 
-        $categories = Category::paginate(3);
-        return view('pages/categories/table', compact('categories'));
+        $table = Category::paginate(3);
+        $page = 'categories';
+
+        return view('pages/categories/table', compact('table', 'page'));
     }
 
     public function create()

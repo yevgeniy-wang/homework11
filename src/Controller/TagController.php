@@ -12,9 +12,10 @@ class TagController
 {
     public function list()
     {
+        $table = Tag::paginate(3);
+        $page = 'tags';
 
-        $tags = Tag::paginate(3);
-        return view('pages/tags/table', compact('tags'));
+        return view('pages/tags/table', compact('table', 'page'));
     }
 
     public function create()

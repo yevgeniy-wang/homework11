@@ -23,7 +23,7 @@
             <th>Updated at</th>
             <th>Actions</th>
         </tr>
-        @forelse($tags as $tag)
+        @forelse($table as $tag)
             <tr>
                 <td>{{ $tag->id }}</td>
                 <td>{{ $tag->title }}</td>
@@ -42,9 +42,7 @@
             </tr>
         @endforelse
     </table>
-    @php
-        require_once 'paginator.php'
-    @endphp
+    @include('pages.paginator')
     <div class="mb-3">
         <a class="btn btn-primary" href="/tags/create">Add new tag</a>
     </div>

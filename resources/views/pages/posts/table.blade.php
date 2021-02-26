@@ -26,7 +26,7 @@
             <th>Updated at</th>
             <th>Actions</th>
         </tr>
-        @forelse($posts as $post)
+        @forelse($table as $post)
             <tr>
                 <td>{{ $post->id }}</td>
                 <td>{{ $post->title }}</td>
@@ -48,9 +48,7 @@
             </tr>
         @endforelse
     </table>
-    @php
-    require_once 'paginator.php'
-    @endphp
+    @include('pages.paginator')
     <div class="mb-3">
         <a class="btn btn-primary" href="/posts/create">Add new post</a>
     </div>

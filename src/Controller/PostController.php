@@ -12,9 +12,10 @@ class PostController
 {
     public function list()
     {
-        $posts = Post::paginate(3);
+        $table = Post::paginate(3);
+        $page = 'posts';
 
-        return view('pages/posts/table', compact('posts'));
+        return view('pages/posts/table', compact('table', 'page'));
     }
 
     public function create()
